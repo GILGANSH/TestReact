@@ -1,0 +1,13 @@
+
+
+footer{
+    display: inline-block;
+    position: flex;
+    padding: 15 px;
+    margin: 15 px;
+    width: 100%;
+    background-color: rgb(41, 35, 35);
+    text-align: center;
+    color: white;
+}
+
