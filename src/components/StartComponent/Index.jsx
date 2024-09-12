@@ -14,7 +14,7 @@ const Index = () => {
     return(
         <>
             <header>
-                < Header/>
+                <Header></Header>
             </header>
             <main>
                 < Outlet />

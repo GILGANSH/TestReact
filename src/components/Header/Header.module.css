@@ -39,10 +39,12 @@ li{
     border: 1px solid #099962;
     border-radius: 15px;
     box-shadow:  0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
 .navlink:hover{
     color: rgb(13, 13, 155);
+    transform: scale(1.05);
 }
  
 .navlink:visited{
