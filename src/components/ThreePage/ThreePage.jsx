@@ -1,35 +1,32 @@
-import { useState } from "react";
-import { useCallback } from "react";
-
-// данный компонент тестовый, 
-// пока что в нем ничего особо важного не лежит.
 
 
+// проверяем как работает контекст
 
 
+import { useContext, createContext } from "react";
 
-const ThreePage = () => {
 
-    // const [hranilishe, FunctiaHran] = useState(1)
+const DasuraContext = createContext(); // Объект контекста уже существует, поэтому создаем экземпляр.
 
-    // const onClick = () => {FunctiaHran(hranilishe+1)}
-    const [count, setCount] = useState(0);
-
-        const increment = useCallback(() => {
-            setCount(count + 1);
-        }, [count]);
-    return(
-        <>
-            {/* <button type="button" onClick={onClick}>
-                Click Me!
-            </button>
-            <p>{hranilishe}</p> */}
-            <div>
-                <p>Current count: {count}</p>
-                <button onClick={increment}>Increment</button>
-            </div>
-        </>
+const Glavni = () => {
+    const data = "Это тестовые данные которые я перекидываю в другой компонент";
+    const asdon = 504
+    return (
+        <DasuraContext.Provider value={{data, asdon}}>
+            <ThreePage />
+        </DasuraContext.Provider>
     );
 };
 
-export default ThreePage;
+
+const ThreePage = () => {
+    const datawe = useContext(DasuraContext);
+    return (
+        <div>
+            <p> Это переданные данные: {datawe.asdon} </p>
+            <p> Это переданные данные: {datawe.data} </p>
+        </div>
+    );
+};
+
+export default Glavni;
